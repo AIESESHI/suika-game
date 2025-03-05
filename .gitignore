@@ -7,4 +7,4 @@ Procfile
 package.json
 package-lock.json
 .cursor/
-src/
+docs/
