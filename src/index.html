@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スイカゲーム</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>スイカゲーム</h1>
+    
+    <div id="gameContainer">
+        <div id="gameInfo">
+            <div id="scoreBoard">
+                <div>
+                    <span class="score-label">HI-SCORE:</span>
+                    <span id="highScore" class="score-value">0</span>
+                </div>
+                <div>
+                    <span class="score-label">SCORE:</span>
+                    <span id="currentScore" class="score-value">0</span>
+                </div>
+            </div>
+            
+            <div id="controls">
+                <div class="keyboard-controls">
+                    <p>PC:</p>
+                    <p><span class="control-key">←</span> 左に移動</p>
+                    <p><span class="control-key">→</span> 右に移動</p>
+                    <p><span class="control-key">Space</span> フルーツを落とす</p>
+                </div>
+                
+                <div class="touch-controls">
+                    <p>タッチ操作:</p>
+                    <p>左側: 左に移動</p>
+                    <p>右側: 右に移動</p>
+                    <p>下部: フルーツを落とす</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gameArea">
+            <canvas id="gameCanvas" width="400" height="600"></canvas>
+            
+            <div class="game-over-overlay">
+                <button id="retryBtn">もう一度遊ぶ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="fruit.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

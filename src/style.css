@@ -1,0 +1,196 @@
+/* style.css */
+:root {
+  --game-width: 400px;
+  --game-height: 600px;
+  --game-area-color: #666;
+  --text-color: #fff;
+  --boundary-color: rgba(255, 0, 0, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  background-color: #000;
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+#gameContainer {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  #gameContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+#gameInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+#scoreBoard {
+  margin-bottom: 20px;
+}
+
+.score-label {
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.score-value {
+  color: var(--text-color);
+}
+
+#gameCanvas {
+  width: var(--game-width);
+  height: var(--game-height);
+  background-color: var(--game-area-color);
+  border: 1px solid #999;
+}
+
+#controls {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+#retryBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px 24px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  background-color: #f00;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  font-family: 'Courier New', monospace;
+}
+
+#retryBtn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#retryBtn:hover {
+  background-color: #c00;
+}
+
+.game-over-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.game-over .game-over-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* スコア更新時のアニメーション */
+@keyframes scoreUpdate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.score-updated {
+  animation: scoreUpdate 0.3s ease;
+}
+
+/* 操作説明 */
+.control-key {
+  display: inline-block;
+  padding: 2px 5px;
+  background-color: #333;
+  border: 1px solid #555;
+  border-radius: 3px;
+  margin: 0 2px;
+}
+
+/* モバイル用のスタイル */
+@media (max-width: 480px) {
+  :root {
+    --game-width: 320px;
+    --game-height: 480px;
+  }
+
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  #gameInfo {
+    font-size: 12px;
+  }
+}
+
+/* タッチデバイス用の説明 */
+.touch-controls {
+  display: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .keyboard-controls {
+    display: none;
+  }
+  
+  .touch-controls {
+    display: block;
+  }
+}
