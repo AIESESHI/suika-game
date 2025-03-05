@@ -2,3 +2,9 @@ node_modules/
 .env
 npm-debug.log
 .DS_Store
+server.js
+Procfile
+package.json
+package-lock.json
+.cursor/
+src/
