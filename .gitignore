@@ -7,6 +7,5 @@ Procfile
 package.json
 package-lock.json
 .cursor/
-docs/
 src/
 assets/

@@ -57,7 +57,7 @@ const FRUITS = [
     name: 'Orange',
     rank: 4,
     scoreValue: 40,
-    radius: 60,
+    radius: 60, // 45から60に拡大
     color: '#FFA726',
     innerColor: '#FFCC80',
     imagePath: './icon/たぬ吉.jpg'
@@ -66,7 +66,7 @@ const FRUITS = [
     name: 'Apple',
     rank: 5,
     scoreValue: 50,
-    radius: 70,
+    radius: 70, // 50から70に拡大
     color: '#66BB6A',
     innerColor: '#A5D6A7',
     imagePath: './icon/みゆき.jpg'
@@ -75,7 +75,7 @@ const FRUITS = [
     name: 'Pineapple',
     rank: 6,
     scoreValue: 100,
-    radius: 85,
+    radius: 85, // 70から85に拡大
     color: '#26A69A',
     innerColor: '#80CBC4',
     imagePath: './icon/ユニコ.jpg'
@@ -84,7 +84,7 @@ const FRUITS = [
     name: 'Watermelon',
     rank: 7,
     scoreValue: 200,
-    radius: 100,
+    radius: 100, // 85から100に拡大
     color: '#42A5F5',
     innerColor: '#90CAF9',
     imagePath: './icon/ヨーフ.jpg'
